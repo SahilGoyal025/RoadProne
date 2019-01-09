@@ -1,0 +1,76 @@
+<html>
+<head>
+	<title>Road Prone</title>
+      <!-- FIRBASE -->
+  <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+  <script>
+  // Initialize Firebase
+  var config = {
+  apiKey: "AIzaSyArNnBU4JXx1TTPqOig79KhaZQ_dSdW_cU",
+  authDomain: "roadprone007.firebaseapp.com",
+  databaseURL: "https://roadprone007.firebaseio.com",
+  projectId: "roadprone007",
+  storageBucket: "roadprone007.appspot.com",
+  messagingSenderId: "385167566999"
+  };
+  firebase.initializeApp(config);
+  </script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.3.0/firebaseui.css" />
+  <script src="https://cdn.firebase.com/libs/firebaseui/2.3.0/firebaseui.js"></script>
+
+
+  <!-- Material Design -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.cyan-indigo.min.css" />
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <link rel="stylesheet" href="adminStyle.css">
+</head>
+<body>
+
+  <div id="loginCover" class="login-cover">
+    <div id="loading" class="mdl-spinner mdl-js-spinner is-active"></div>
+    <div id="firebaseui-spa">
+      <h6>Enter your Email and Password</h6>
+      <div id="firebaseui-container"></div>
+      <br />
+    </div>
+  </div>
+
+<center>
+  <header class="mdl-layout__header headerrr">
+    <div class="mdl-layout-icon"></div>
+    <div class="mdl-layout__header-row">
+      <span class="mdl-layout__title">Road Prone |</span>
+      <center>
+        <span id="issue1"class="mdl-layout__title">Issues</span>
+      </center>
+      <div class="mdl-layout-spacer"></div>
+      <button id="signOutBtn"class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+        Sign Out<i id="icon" class="material-icons">account_circle</i>
+      </button>
+    </div>
+  </header>
+  <!-- <div class="header">
+
+    <button id="signOut" class="mdl-button mdl-js-button mdl-button-/-raised mdl-js-ripple-effect mdl-button-/-/colored">Sign Out</button>
+  </div> -->
+	<br>
+	<table class="data-table" id="tableId">
+
+		<thead>
+			<tr>
+				<th>Latitude</th>
+				<th>Longitude</th>
+				<th >Issue Type</th>
+				<th style="width:800px;">Description</th>
+				<th>Remove</th>
+			</tr>
+		</thead>
+		<tbody id="table_body">
+		</tbody>
+
+	</table>
+  <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

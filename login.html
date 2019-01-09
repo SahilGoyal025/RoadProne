@@ -1,0 +1,98 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- FIRBASE -->
+    <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyArNnBU4JXx1TTPqOig79KhaZQ_dSdW_cU",
+      authDomain: "roadprone007.firebaseapp.com",
+      databaseURL: "https://roadprone007.firebaseio.com",
+      projectId: "roadprone007",
+      storageBucket: "roadprone007.appspot.com",
+      messagingSenderId: "385167566999"
+    };
+    firebase.initializeApp(config);
+    </script>
+
+      <!-- Material Design -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+   <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.cyan-indigo.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+    integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+    integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+    crossorigin=""></script>
+
+    <link rel="stylesheet" href="master.css">
+  </head>
+  <body>
+    <nav>
+     <div class="navbar">
+      <a href="index.html">HOME</a>
+      <!-- <a href="admin.html">ADMIN ACCESS</a> -->
+    </div>
+    </nav>
+    <div class="confirmation" id ="confirm">
+      <div id="loading" class="mdl-spinner mdl-js-spinner is-active"></div>
+      <dialog class="mdl-dialog" id="dialog">
+        <h4 class="mdl-dialog__title">Complaint Registered.</h4>
+        <div class="mdl-dialog__content">
+          <p id="reportConfirm">
+          </p>
+        </div>
+        <div class="mdl-dialog__actions">
+          <button id="confirmBtn" type="button" class="mdl-button">HOME</button>
+          <!-- <button type="button" class="mdl-button close">Disagree</button> -->
+        </div>
+      </dialog>
+    </div>
+    <div class="container">
+        <form id="contact" >
+          <h3>Complaint form</h3>
+          <h4 id="latlng">Latitude: Longitude:</h4>
+          <fieldset>
+            <input id="name" placeholder="Your name" type="text" tabindex="1" required autofocus>
+          </fieldset>
+          <fieldset>
+            <input id="email" placeholder="Your Email Address" type="email" tabindex="2" required>
+          </fieldset>
+          <br />
+          <fieldset>
+            <select required id="issue" autofocus>
+              <option value="">Select Issue</option>
+              <option value="Accident">Accident</option>
+              <option value="Landslide">Landslide</option>
+              <option value="Condemned">Road Condemned</option>
+              <option value="Riots">Riots</option>
+              <option value="Blocked">Road Blocked</option>
+           </select><br />
+          </fieldset>
+          <fieldset>
+            <!-- Default Slider -->
+            <span id="slider" >Severity</span><input class="mdl-slider mdl-js-slider"  id='sliderVal' type="range"
+            min="1" max="10" value="0" tabindex="0">
+          </fieldset>
+          <br />
+          <fieldset>
+            <textarea id="desc" placeholder="Type your message here...." tabindex="5" required></textarea>
+          </fieldset>
+          <fieldset>
+            <button name="submit" type="submit" id="submitButton" >Submit</button>
+          </fieldset>
+        </form>
+      </div>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script> -->
+  <script src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+  <script src = "getGeo.js"> </script>
+  <script src="formAction.js"></script>
+
+  </body>
+</html>
